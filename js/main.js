@@ -1,5 +1,12 @@
 /* 정우씨앤에어(주) — jungwooco.com */
 
+// PWA 서비스워커 등록 (https에서만)
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   // 모바일 내비게이션 토글
   var toggle = document.querySelector('.nav-toggle');

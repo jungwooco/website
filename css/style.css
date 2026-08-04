@@ -532,6 +532,7 @@ ul { list-style: none; }
   gap: 40px;
   padding: 44px 0;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 94px; /* 고정 헤더에 가리지 않도록 앵커 보정 */
 }
 
 .service-item:first-child { border-top: 1px solid var(--line); }
