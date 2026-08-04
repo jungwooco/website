@@ -1,0 +1,32 @@
+{
+  "name": "정우씨앤에어(주)",
+  "short_name": "정우씨앤에어",
+  "description": "해상·항공 수출입 포워딩 — 정우씨앤에어(주)",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#10233F",
+  "theme_color": "#19345E",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
