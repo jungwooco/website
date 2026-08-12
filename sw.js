@@ -1,5 +1,5 @@
 /* 정우씨앤에어(주) — service worker */
-var CACHE = 'jungwoo-v1';
+var CACHE = 'jungwoo-v2';
 var ASSETS = [
   '/',
   '/index.html',
