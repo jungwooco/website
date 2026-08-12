@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
   if (form) {
     var status = document.getElementById('form-status');
     var formspreeId = form.getAttribute('data-formspree-id') || '';
+    // 다국어 메시지: data-msg-* 속성이 있으면 사용, 없으면 국문 기본값
+    var msgOk = form.getAttribute('data-msg-ok') || '문의가 접수되었습니다. 확인 후 회신드리겠습니다.';
+    var msgErr = form.getAttribute('data-msg-err') || '전송에 실패했습니다. seanair@jungwooco.com 으로 직접 메일 주시기 바랍니다.';
+    var btnSending = form.getAttribute('data-btn-sending') || '전송 중...';
+    var btnLabel = form.getAttribute('data-btn-label') || '문의 보내기';
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -75,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var btn = form.querySelector('button[type="submit"]');
       btn.disabled = true;
-      btn.textContent = '전송 중...';
+      btn.textContent = btnSending;
 
       fetch('https://formspree.io/f/' + formspreeId, {
         method: 'POST',
@@ -86,19 +91,18 @@ document.addEventListener('DOMContentLoaded', function () {
           if (res.ok) {
             form.reset();
             status.className = 'form-status ok';
-            status.textContent = '문의가 접수되었습니다. 확인 후 회신드리겠습니다.';
+            status.textContent = msgOk;
           } else {
             throw new Error('submit failed');
           }
         })
         .catch(function () {
           status.className = 'form-status err';
-          status.textContent =
-            '전송에 실패했습니다. seanair@jungwooco.com 으로 직접 메일 주시기 바랍니다.';
+          status.textContent = msgErr;
         })
         .finally(function () {
           btn.disabled = false;
-          btn.textContent = '문의 보내기';
+          btn.textContent = btnLabel;
         });
     });
   }
