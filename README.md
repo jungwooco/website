@@ -44,7 +44,7 @@ site/
 1. vercel.com 가입 → Add New Project → 저장소 연결 (Framework: Other, 빌드 설정 없음)
 2. Settings → Domains 에 jungwooco.com 추가 → 안내에 따라 DNS 설정
 
-## 영문 버전 추가 (추후)
+## 영문 버전 (완료)
 
 - `/en/` 폴더를 만들어 4개 페이지를 복사·번역 (assets/css/js는 `../` 경로로 공유)
 - 각 페이지 `<head>`에 hreflang 태그 추가:
